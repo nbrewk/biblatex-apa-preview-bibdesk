@@ -1,0 +1,34 @@
+\documentclass[letterpaper]{article}
+
+\pagestyle{empty}
+\textwidth = 6.5in
+\voffset = -105pt
+\hoffset = -120pt
+
+\renewcommand{\refname}{}
+
+ % Times-like font
+\usepackage{mathptmx}
+
+% biblatex-apa specific
+\usepackage[american]{babel}
+\usepackage[autostyle]{csquotes}
+\usepackage[style=<<Style>>,backend=biber]{biblatex}
+\DeclareLanguageMapping{american}{american-apa}
+
+\addbibresource{<<File>>.bib} % you have to add ``.bib'' here because,
+                              % for some reason, it won't find the
+                              % file without it
+
+% The following command is provided for LaTeX2RTF compatibility with amslatex.
+\newif\iflatextortf
+\iflatextortf
+\providecommand{\bysame}{\_\_\_\_\_}
+\fi
+
+\begin{document}
+
+\nocite{<<CiteKeys>>}
+\printbibliography[heading=none] % I don't want a heading on my previews
+
+\end{document}
